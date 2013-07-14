@@ -30,8 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
-    [self.tableView reloadData];
+    
+    //[self.tableView reloadData];
     
     [self start];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name: UIKeyboardDidShowNotification object:nil];
@@ -75,7 +75,7 @@
         }
     
     
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
@@ -92,7 +92,7 @@
 {   NSError *error;
     
     ListOfMajors = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 
 -(void)start
@@ -157,10 +157,18 @@
     //store in a string
     selectCourse =selectedCell.textLabel.text;
     //print out what we have in the string
-    NSLog (@"string print out : %@", selectCourse);
+    //NSLog (@"string print out : %@", selectCourse);
    //stringwithFormat
     //
+    [self performSegueWithIdentifier:@"FromCourseToClasses" sender:self];
     
 }
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"FromCourseToClasses"])
+    {
+        ClassViewController * destVC = [segue destinationViewController];
+        [destVC populateCourse:selectCourse];
+    }
+}
 @end

@@ -28,16 +28,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ClassViewController.m"
-         timestampString = "393463867.787076"
+         timestampString = "395512856.027111"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
-         landmarkName = "-parseJSON:"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
+         landmarkName = "-createConnection:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -45,12 +45,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ClassViewController.m"
-         timestampString = "393408531.018907"
+         timestampString = "395512856.027111"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-start"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
+         landmarkName = "-createConnection:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

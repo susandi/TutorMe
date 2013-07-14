@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ClassViewController.h"
 
 
 #define getUrl @"http://localhost:80/Test%20Server/wwwroot/include_php/MajorList.php"
@@ -18,6 +19,6 @@
     BOOL isFiltered;
     
 }
-@property (strong,nonatomic) NSString *selectCourse;
+@property (strong, nonatomic) NSString *selectCourse;
 @property (strong, nonatomic) IBOutlet UISearchBar *MajorSearchBar;
 @end

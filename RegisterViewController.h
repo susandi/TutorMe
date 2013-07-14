@@ -14,10 +14,11 @@
 {
     RegisterConnection * connection;
 }
-
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextField *reEnterPassTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lastnameField;
+@property (weak, nonatomic) IBOutlet UITextField *firstnameField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *reEnterPassField;
 
 
 // action listener for register button

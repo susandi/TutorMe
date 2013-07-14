@@ -14,14 +14,14 @@
 @end
 
 @implementation ClassViewController
-@synthesize receivedData;
+@synthesize receivedData, course, courseList;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+     
     }
     return self;
 }
@@ -29,72 +29,65 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self start];
-
-    [self.tableView reloadData];
+    courseList = [[NSArray alloc] init];
+    [self createConnection:course];
+ 
+   
    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
     
 }
-/*-(void) getData:(NSData *)data
-{   NSError *error;
-    
-    classNames = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    [self.tableView reloadData];
-}*/
 
-- (void)start{
-   
-     NSError *error;
-    //connect to database given by url
-    NSString *url=[ NSString stringWithFormat:@"%@",@"http://192.168.1.149:80/Test%20Server/wwwroot/include_php/classData.php"];
-    NSString *tmpstr= @"ART";
+
+- (void)createConnection : (NSString *) department
+{
+
+    NSString *url=[ NSString stringWithFormat:@"%@",@"http://localhost/Test%20Server/wwwroot/include_php/classData.php"];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: url]];
     
     
-    NSString* myRequestString = [[NSString alloc]initWithFormat:@"%@", tmpstr];
     
-    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
- 
-    //NSMutableURLRequest *request = [[NSMutableURLRequest requestWithURL:[NSURL URLWithString: url]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: url]]; 
+    NSString *myRequestString =[NSString stringWithFormat:@"department=%@",department];
+    
+    
    
     [request setHTTPMethod: @"POST"];
-    [ request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-
+                                    
     //post section
-    [request setHTTPBody: myRequestData];
+    [request setHTTPBody: [myRequestString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+  
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    if (connection)
+    {
+        receivedData=[NSMutableData data];
+    }
     
     
-   
-    NSURLResponse *response;
-    NSData *returnData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    //NSString *strData = [[NSString alloc]initWithData:myRequestData encoding:NSUTF8StringEncoding];
-    NSString *content=[NSString stringWithUTF8String:[returnData bytes]];
-     NSLog(@"responseData: %@",content);
-     NSLog(@"Succeeded! Received %d bytes of data",[content length]);
-    //[self getData:myRequestData];
-    classNames = [NSJSONSerialization JSONObjectWithData:myRequestData options:kNilOptions error:&error];
-    [self.tableView reloadData];
+    
      
 }
+                                
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
   
 
     NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
-    NSString * result = [self parseJSON: receivedData];
+    courseList = [self parseJSON: receivedData];
     
     // release the connection, and the data object
     connection = nil;
     receivedData = nil;
     
-    
+    /*
     if([result caseInsensitiveCompare:@"passed"] == NSOrderedSame)
     {
         
@@ -103,16 +96,52 @@
         
          NSLog(@"classNames print out : %@",classNames);
     }
+     */
 
+    [self.tableView reloadData];
+     
 
 }
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+    {
+        // Append the new data to receivedData.
+        // receivedData is an instance variable declared elsewhere.
+        [receivedData appendData:data];
+    }
+ - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+    {
+        // This method is called when the server has determined that it
+        // has enough information to create the NSURLResponse.
+        
+        // It can be called multiple times, for example in the case of a
+        // redirect, so each time we reset the data.
+        // receivedData is an instance variable declared elsewhere.
+        [receivedData setLength:0];
+    }
+
+        
+        
+        
 #pragma mark - Table view data source
 
-- (NSString *) parseJSON: (NSData *) data ;
+
+- (NSArray *) parseJSON: (NSData *) data ;
 {
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions
                            error:&error];
+
+    if (json == nil)
+        return nil;
+    /******************************
+     *
+     
+     NEED TO DO ERROR CHECKING IN json object ("error" :    , "result" );
+     */
+
+    NSArray *resultArray = [json objectForKey:@"result"];
+    
+    /*
       NSString *result = nil;
     //error parsing
     if(!json)
@@ -137,9 +166,18 @@
     json = nil;
     error = nil;
     return result;
+     */
+    
+    NSLog (@"data=%@", json);
+    return  resultArray;
+     
 }
 
-
+- (void) populateCourse : (NSString *) aCourse
+{
+    course = [[NSString alloc] init];
+    course = aCourse;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -149,7 +187,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [classNames count];
+    return [courseList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -159,8 +197,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSDictionary *info = [classNames objectAtIndex:indexPath.row];
-    cell.textLabel.text=[info objectForKey:@"course_name"];
+    NSString * courseName = [courseList objectAtIndex:indexPath.row];
+    cell.textLabel.text= courseName;
     
     return cell;
 }

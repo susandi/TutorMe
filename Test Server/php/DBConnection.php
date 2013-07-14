@@ -24,7 +24,7 @@ class DBConnection
         		self::$db_password, self::$db_name);
         if(mysqli_connect_errno())//error connecting
         {
-            echo("error connecting". mysqli_connect_error());
+            echo("error connecting");
             return null;
         }
         return self::$conn;

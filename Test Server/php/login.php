@@ -18,6 +18,7 @@ if ((!isset($email) || !isset($password)) ||
 		(empty($email) || empty($password))) //if email and password is not set yet or empty
     echo ($f);
 
+	
 else
 {
 	$authentication = new Authentication($email, $password);
@@ -25,6 +26,7 @@ else
 		echo($p);
 	else
 	       echo($f);
+		
 }
 
 //decode json $d = json_decode($e);	

@@ -13,7 +13,6 @@ class Authentication
 	private $email;
 	private $password;
 	private $salt;
-	
 	/**
 	 * constructor for the class
 	 * @param $e the email
@@ -51,7 +50,6 @@ class Authentication
 			echo "Failed to Connect to database";
 			return false;
 		}
-		
 
 	
 		//prepare only works for 1 sql statement. It's good to prevent SQL injection
@@ -98,12 +96,13 @@ class Authentication
 		
 		if($resultPassword == hash("sha512", $this->password.$resultSalt))
 			return true;
-		else
+		else {
+			// for now
 			return false;
-		
-		
-//		echo ($resultEmail).'<br \>'.($resultPassword).'<br \>'.($resultSalt).'<br \>';
-//		echo ($this->password);
+			//return true;	
+		}
+		echo ($resultEmail).'<br \>'.($resultPassword).'<br \>'.($resultSalt).'<br \>';
+		echo ($this->password);
 		
 		DBConnection::closeConnection();		
 	}	

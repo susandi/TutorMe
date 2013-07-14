@@ -1,24 +1,49 @@
 <?php
 
-//connect to database
-function connect() {
-  $dbh = mysql_connect ("localhost", "root", "") or die ('Cannot connect to the database because: ' . mysql_error());
-  mysql_select_db("tutorMeDatabase", $dbh); 
-  return $dbh;
+/**
+document here
+*/
+function createConnection()
+{
+	$conn = new mysqli("localhost", "root", "", "TutorMeDatabase");
+	if (mysqli_connect_errno())
+	{
+		die ("error connecting to database");
+		return null;
+	}
+	return $conn;
+} 
+
+
+/**
+document here
+*/
+function getCourseFromMajor ($department)
+{
+	$conn = createConnection();
+	$result = array("error" => null, "result"=>array());
+	$retrievedCourse = nil; 
+	if (!$conn)
+		return;
+	$query = "select course_name from course where department = ?";
+	$statement = $conn->prepare($query);
+	$statement->bind_param("s",$department);
+	if (!$statement->execute())
+		return (json_encode($result["error"] = "Failed to execute"));
+	
+	if (!$statement->bind_result($retrievedCourse))
+		return (json_encode($result["error"] = "Failed to bind"));
+	
+	while ($statement->fetch())
+	{
+		array_push($result["result"], $retrievedCourse);
+	}
+	$statement->close();
+	$conn->close();
+	return $result;	
 }
 
-//store posted data
-if(isset($_POST['department'])){
-  $dbh = connect();
-  $department = $_POST['department'];
-  $query = mysql_query("SELECT course_name FROM TutorMeDatabase WHERE department = $department;") or die("Error: " . mysql_error());;
-
-  $rows = array();
-  while($r = mysql_fetch_assoc($query)) {
-    $rows[] = $r;
-  }      
-  echo $rows;
-  echo json_encode($rows);
-  mysql_close();
-}
+$department = $_POST['department'];
+//$department='ART';
+echo (json_encode(getCourseFromMajor($department)));
 ?>

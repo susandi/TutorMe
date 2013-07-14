@@ -14,6 +14,8 @@
 
 @implementation RegisterViewController
 
+@synthesize firstnameField,lastnameField,usernameField,passwordField,reEnterPassField;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,10 +43,11 @@
  */
 
 - (IBAction)registerButtonClicked:(id)sender
-{
-    NSString * username = self.usernameTextField.text;
-    NSString * password = self.passwordTextField.text;
-    NSString * reEnterPassword = self.reEnterPassTextField.text;
+{   NSString * firstname= self.firstnameField.text;
+    NSString * lastname= self.lastnameField.text;
+    NSString * username = self.usernameField.text;
+    NSString * password = self.passwordField.text;
+    NSString * reEnterPassword = self.reEnterPassField.text;
     
     
     // create connection and process
@@ -78,9 +81,12 @@
             [connection createConnection:username :password];
         }
         
-    } 
+    }
+    firstname=nil;
+    lastname=nil;
     username = nil;
     password = nil;
+    reEnterPassword=nil;
    
 }
 
