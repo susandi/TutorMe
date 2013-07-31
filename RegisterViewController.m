@@ -43,8 +43,9 @@
  */
 
 - (IBAction)registerButtonClicked:(id)sender
-{   NSString * firstname= self.firstnameField.text;
+{
     NSString * lastname= self.lastnameField.text;
+    NSString * firstname= self.firstnameField.text;
     NSString * username = self.usernameField.text;
     NSString * password = self.passwordField.text;
     NSString * reEnterPassword = self.reEnterPassField.text;
@@ -78,7 +79,7 @@
         else
         {
             [connection setDelegate:self];
-            [connection createConnection:username :password];
+            [connection createConnection :firstname :lastname :username :password];
         }
         
     }

@@ -41,8 +41,8 @@
  * @param username is the username to login
  * @param password is the password to login
  */
-- (void) createConnection : (NSString*)username :(NSString*)password;
-
+//- (void) createConnection : (NSString*)username :(NSString*)password;
+- (void)createConnection: (NSString *) firstname : (NSString *) lastname : (NSString *) username : (NSString *) password;
 /*
  * This function is to parse JSON object get back from php
  * JSON should be in the format {"register":"passed"} or
