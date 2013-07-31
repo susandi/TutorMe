@@ -133,25 +133,7 @@ INSERT INTO `major_lists` (`id`, `majors`) VALUES
 (28, 'industrial design'),
 (29, 'Journalism');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `student`
---
-
-CREATE TABLE IF NOT EXISTS `student` (
-  `id` int(11) NOT NULL,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
-  `username` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
-  `salt` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `student`
---
 
 
 -- --------------------------------------------------------
@@ -179,15 +161,27 @@ CREATE TABLE IF NOT EXISTS `student_has_course` (
 -- Table structure for table `tutor`
 --
 
-CREATE TABLE IF NOT EXISTS `tutor` (
-  `id` int(11) NOT NULL,
-  `first_name` varchar(45) DEFAULT NULL,
-  `last_name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `uid` int(11) NOT NULL,
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `salt` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE IF NOT EXISTS `userprofile` (
+  `uid` int(11) NOT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  `firstname` varchar(45) DEFAULT NULL,
+  `major` varchar(45) DEFAULT NULL,
+  `school` varchar(45) DEFAULT NULL,
+  `degree` varchar(45) DEFAULT NULL,
+  `image` varchar(50) DEFAULT NULL,
+  `availableTime` varchar(60)  DEFAULT NULL,
+  `course_id` int(11) NOT NULL,
+  PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
