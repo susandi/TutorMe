@@ -560,7 +560,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Aeronautics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cj7-Zo-kdD">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="31"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -750,7 +750,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Scott L." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ifa-Yh-Pce">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="87"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -766,7 +766,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="John K." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a4A-KN-YQL">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="87"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -785,7 +785,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Mark M." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5NC-fN-zEa">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="87"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -801,7 +801,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Teresa W." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BfV-Y5-EIS">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="87"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1035,7 +1035,7 @@
             <objects>
                 <viewController id="HdZ-iL-ERn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAE-Ug-Iyc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Resumé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gk-9E-XhA">
@@ -1605,7 +1605,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Aeronautics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pKz-hS-jLu">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="31"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2158,10 +2158,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="y5r-Ps-Dfo"/>
         <segue reference="v9y-H3-2jN"/>
-        <segue reference="xHG-rH-MqZ"/>
-        <segue reference="UHf-bh-Z66"/>
+        <segue reference="sdl-Pk-7R8"/>
+        <segue reference="y5r-Ps-Dfo"/>
+        <segue reference="lTV-07-KMG"/>
         <segue reference="dAH-WT-EXR"/>
     </inferredMetricsTieBreakers>
 </document>
