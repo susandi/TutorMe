@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Nb-jO-qMF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Nb-jO-qMF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="2" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkT-Nh-ofe">
@@ -102,7 +102,7 @@
             <objects>
                 <viewController id="vnV-8M-B7E" customClass="TutorMeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pbe-35-zI9">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to TutorMe !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57q-bK-GKK">
@@ -196,7 +196,7 @@
             <objects>
                 <viewController id="Fm8-Ic-a3R" customClass="RegisterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="In4-91-di7" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPl-B6-Dmz">
@@ -289,7 +289,7 @@
             <objects>
                 <viewController id="dgk-Yi-a8w" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9nv-HG-bBn">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Now you are registerd. Tap the button below to start editing your profile." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-En-ddb">
@@ -352,7 +352,7 @@
             <objects>
                 <viewController id="kGB-o9-dOc" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H0l-tX-eCe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uas-h7-cv6">
@@ -426,7 +426,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajJ-or-sg7">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Find Students">
+                                <state key="normal" title="Find students">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -712,7 +712,7 @@
                     <connections>
                         <outlet property="MajorSearchBar" destination="MI9-V9-raD" id="nTb-WV-Pr5"/>
                         <outlet property="searchDisplayController" destination="teH-cD-ZIc" id="cmx-K1-TfH"/>
-                        <segue destination="tlc-x9-eK5" kind="push" identifier="FromCourseToClasses" id="qjT-fk-eJy"/>
+                        <segue destination="tlc-x9-eK5" kind="push" identifier="FromMajorToCourses" id="qjT-fk-eJy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltw-Be-ZaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1035,7 +1035,7 @@
             <objects>
                 <viewController id="HdZ-iL-ERn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAE-Ug-Iyc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Resumé" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Gk-9E-XhA">
@@ -1096,7 +1096,7 @@
             <objects>
                 <viewController id="wc0-Cp-PJp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ShI-Nj-7mL">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Update Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YM-qR-hW7">
@@ -1225,7 +1225,7 @@
             <objects>
                 <viewController id="vqz-vZ-o7t" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ybf-xk-Hdj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAD-G6-LME">
@@ -1291,7 +1291,7 @@
             <objects>
                 <tableViewController id="mDe-0d-Vf7" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gN7-f4-ctQ" userLabel="joi">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1722,7 +1722,7 @@
             <objects>
                 <tableViewController id="Lgj-BO-Kvf" userLabel="Courses for students View Controller" customClass="GetMajorList" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RR0-4p-wRm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="I4v-4J-zpp">
@@ -1740,25 +1740,8 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax8-Px-a2x">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="259" id="ADS-yJ-Hga"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="Ax8-Px-a2x" firstAttribute="leading" secondItem="8dk-l0-p5b" secondAttribute="leading" constant="10" id="TYc-Pg-Y9U"/>
-                                    <constraint firstItem="Ax8-Px-a2x" firstAttribute="top" secondItem="8dk-l0-p5b" secondAttribute="top" constant="11" id="VVU-8e-A0g"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="RNc-XU-dVi" kind="push" identifier="FromCourseToClasses" id="z7t-FA-6fU"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1766,9 +1749,10 @@
                             <outlet property="delegate" destination="Lgj-BO-Kvf" id="4UT-Xs-owL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Courses" id="oYZ-7k-UIl"/>
+                    <navigationItem key="navigationItem" title="Majors" id="oYZ-7k-UIl"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="rtj-lM-J0S" id="IFc-3Y-p85"/>
+                        <segue destination="wLs-yg-hcC" kind="push" identifier="FromMajorToCourses" id="5mE-xh-wIR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oap-7G-v7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1783,51 +1767,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1360" y="-1256"/>
-        </scene>
-        <!--Select Course for students View Controller-->
-        <scene sceneID="r08-6u-wCq">
-            <objects>
-                <viewController id="RNc-XU-dVi" userLabel="Select Course for students View Controller" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0bb-AM-bqM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uf-3x-IJS">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Yw7-wP-7nK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show class list">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wF-53-Uzd">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="113" id="s0z-Co-Q6B"/>
-                                    <constraint firstAttribute="height" constant="21" id="xY0-6R-rRs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="2Uf-3x-IJS" firstAttribute="top" secondItem="0bb-AM-bqM" secondAttribute="top" constant="129" id="8z5-8y-EfA"/>
-                            <constraint firstItem="8wF-53-Uzd" firstAttribute="leading" secondItem="0bb-AM-bqM" secondAttribute="leading" constant="142" id="Rsv-Er-lcG"/>
-                            <constraint firstAttribute="bottom" secondItem="8wF-53-Uzd" secondAttribute="bottom" constant="175" id="iWG-Wz-9X8"/>
-                            <constraint firstItem="2Uf-3x-IJS" firstAttribute="leading" secondItem="0bb-AM-bqM" secondAttribute="leading" constant="43" id="t6o-NO-dHu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Class List" id="dJH-LG-FRl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dzq-LI-koC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-849" y="-1256"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sDi-hz-A6P">
@@ -2095,73 +2034,73 @@
             </objects>
             <point key="canvasLocation" x="-883" y="-1867"/>
         </scene>
+        <!--Show class for course_student View-->
+        <scene sceneID="jP3-ck-5bm">
+            <objects>
+                <tableViewController id="wLs-yg-hcC" userLabel="Show class for course_student View" customClass="ClassViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9eO-P1-JTG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="IeR-Co-Aah">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="wLs-yg-hcC" id="u6D-Hb-wx8"/>
+                            <outlet property="delegate" destination="wLs-yg-hcC" id="7aw-uL-y2o"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Courses" id="g6V-AV-Way"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="teH-cD-ZIc" id="iSN-nO-oXG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0F-Lz-kRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="YGv-H4-oln">
+                    <connections>
+                        <outlet property="delegate" destination="wLs-yg-hcC" id="i9I-jW-Ftq"/>
+                        <outlet property="searchContentsController" destination="wLs-yg-hcC" id="hl6-eT-19N"/>
+                        <outlet property="searchResultsDataSource" destination="wLs-yg-hcC" id="0Cr-GK-efM"/>
+                        <outlet property="searchResultsDelegate" destination="wLs-yg-hcC" id="Icg-lt-9fL"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-883" y="-1243"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Default.png" width="320" height="480"/>
     </resources>
-    <classes>
-        <class className="ClassViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClassViewController.h"/>
-        </class>
-        <class className="GetMajorList" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GetMajorList.h"/>
-            <relationships>
-                <relationship kind="outlet" name="MajorSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTouched:"/>
-                <relationship kind="action" name="loginButtonClicked:"/>
-                <relationship kind="action" name="textFieldFinishedWithKeyBoard:"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="degree" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="major" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="picture" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="RegisterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegisterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTouched:"/>
-                <relationship kind="action" name="registerButtonClicked:"/>
-                <relationship kind="action" name="textFieldFinishedWithKeyBoard:"/>
-                <relationship kind="outlet" name="firstnameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="lastnameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="reEnterPassField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="TutorMeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TutorMeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="registerButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="keT-wH-KVl"/>
         <segue reference="eQG-F6-HAI"/>
         <segue reference="lTV-07-KMG"/>
         <segue reference="dAH-WT-EXR"/>
         <segue reference="ZZO-xM-FvF"/>
+=======
+        <segue reference="v9y-H3-2jN"/>
+        <segue reference="sdl-Pk-7R8"/>
+        <segue reference="y5r-Ps-Dfo"/>
+        <segue reference="lTV-07-KMG"/>
+        <segue reference="dAH-WT-EXR"/>
+>>>>>>> 1a84d465498fab7b1a860785d7db0f2f35b16ad3
     </inferredMetricsTieBreakers>
 </document>

@@ -160,12 +160,12 @@
     //NSLog (@"string print out : %@", selectCourse);
    //stringwithFormat
     //
-    [self performSegueWithIdentifier:@"FromCourseToClasses" sender:self];
+    [self performSegueWithIdentifier:@"FromMajorToCourses" sender:self];
     
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"FromCourseToClasses"])
+    if ([[segue identifier] isEqualToString:@"FromMajorToCourses"])
     {
         ClassViewController * destVC = [segue destinationViewController];
         [destVC populateCourse:selectCourse];
