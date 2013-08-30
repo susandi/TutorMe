@@ -8,13 +8,15 @@
 
 #import "ClassViewController.h"
 #import "GetMajorList.h"
+#import "ShowTutorViewController.h"
+#import "TutorMeAppDelegate.h"
 
 @interface ClassViewController ()
 
 @end
 
 @implementation ClassViewController
-@synthesize receivedData, course, courseList;
+@synthesize receivedData, major, courseList,selectCourse;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -30,7 +32,7 @@
 {
     [super viewDidLoad];
     courseList = [[NSArray alloc] init];
-    [self createConnection:course];
+    [self createConnection:major];
  
    
    
@@ -44,7 +46,7 @@
 }
 
 
-- (void)createConnection : (NSString *) department
+- (void)createConnection : (NSString *) departmentName
 {
 
     NSString *url=[ NSString stringWithFormat:@"%@",@"http://localhost/Test%20Server/wwwroot/include_php/classData.php"];
@@ -53,7 +55,7 @@
     
     
     
-    NSString *myRequestString =[NSString stringWithFormat:@"department=%@",department];
+    NSString *myRequestString =[NSString stringWithFormat:@"department=%@",departmentName];
     
     
    
@@ -68,10 +70,8 @@
     if (connection)
     {
         receivedData=[NSMutableData data];
+        
     }
-    
-    
-    
      
 }
                                 
@@ -118,7 +118,6 @@
         // receivedData is an instance variable declared elsewhere.
         [receivedData setLength:0];
     }
-
         
         
         
@@ -168,15 +167,15 @@
     return result;
      */
     
-    NSLog (@"data=%@", json);
+    NSLog (@"course data=%@", json);
     return  resultArray;
      
 }
 
-- (void) populateCourse : (NSString *) aCourse
+- (void) populateCourse : (NSString *) aMajor
 {
-    course = [[NSString alloc] init];
-    course = aCourse;
+    major = [[NSString alloc] init];
+    major = aMajor;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -203,56 +202,30 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
+//Retrieve tutor list for current selected course
+UITableViewCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
+//store in a string
+selectCourse =selectedCell.textLabel.text;
+//print out what we have in the string
+NSLog (@"string print out : %@", selectCourse);
+//stringwithFormat
+//
+[self performSegueWithIdentifier:@"FromCourseToTutors" sender:self];
+
+}
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"FromCourseToTutors"])
+    {
+        ShowTutorViewController * destVC = [segue destinationViewController];
+        [destVC populateTutors:selectCourse];
+    }
+}
 @end

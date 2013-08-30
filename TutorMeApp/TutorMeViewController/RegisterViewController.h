@@ -14,15 +14,21 @@
 {
     RegisterConnection * connection;
 }
-@property (weak, nonatomic) IBOutlet UITextField *lastnameField;
-@property (weak, nonatomic) IBOutlet UITextField *firstnameField;
+//@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+//@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+//@property (weak, nonatomic) IBOutlet UITextField *reEnterPassField;
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
+
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
 @property (weak, nonatomic) IBOutlet UITextField *reEnterPassField;
 
 
 // action listener for register button
 - (IBAction)registerButtonClicked:(id)sender;
+
+
 
 //dimiss keyboard when backgroudn is tapped
 -(IBAction)backgroundTouched:(id)sender;

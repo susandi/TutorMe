@@ -1,9 +1,9 @@
 //
 //  RegisterViewController.m
-//  TutorMeApp
+//  Login
 //
-//  Created by FF on 3/24/13.
-//  Copyright (c) 2013 com.masonw. All rights reserved.
+//  Created by Lam Lu on 2/19/13.
+//  Copyright (c) 2013 Lam Lu. All rights reserved.
 //
 
 #import "RegisterViewController.h"
@@ -14,7 +14,7 @@
 
 @implementation RegisterViewController
 
-@synthesize firstnameField,lastnameField,usernameField,passwordField,reEnterPassField;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,14 +43,40 @@
 }
 
 
+
+/*
+ * Default action when a row is selected
+ */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    //this is to implement the delegation to textbox when the user tap anywhere in the cell row
+    //if the username cell is selected
+    if (indexPath.section == 0 && indexPath.row == 0)
+    {
+        [self.usernameField becomeFirstResponder];
+    }
+    
+    //the password cell is selected
+    else if (indexPath.section == 0 && indexPath.row == 1)
+        [self.passwordField becomeFirstResponder];
+    
+}
+/*
+- (void)viewDidUnload {
+    [self setPasswordField:nil];
+    [self setUsernameField:nil];
+    [self setReEnterPassField:nil];
+    [super viewDidUnload];
+}*/
+
 /*
  * Action listener for registerButton
  */
 
 - (IBAction)registerButtonClicked:(id)sender
 {
-    NSString * lastname= self.lastnameField.text;
-    NSString * firstname= self.firstnameField.text;
     NSString * username = self.usernameField.text;
     NSString * password = self.passwordField.text;
     NSString * reEnterPassword = self.reEnterPassField.text;
@@ -76,19 +107,17 @@
             [alert show];
             alert = nil; //release arlet when done
         }
+        
         else
         {
             [connection setDelegate:self];
-            [connection createConnection :firstname :lastname :username :password];
+            [connection createConnection:username :password];
         }
         
     }
-    firstname=nil;
-    lastname=nil;
     username = nil;
     password = nil;
-    reEnterPassword=nil;
-   
+    
 }
 
 /*
@@ -100,6 +129,8 @@
 - (IBAction) textFieldFinishedWithKeyBoard:(id)sender {
     [sender resignFirstResponder];
 }
+
+
 
 /*Dismiss the keyboard when space is tapped
  *storyboard config:

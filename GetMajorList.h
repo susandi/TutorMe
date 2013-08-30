@@ -19,6 +19,6 @@
     BOOL isFiltered;
     
 }
-@property (strong, nonatomic) NSString *selectCourse;
+@property (strong, nonatomic) NSString *selectMajor;
 @property (strong, nonatomic) IBOutlet UISearchBar *MajorSearchBar;
 @end

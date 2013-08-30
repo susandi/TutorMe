@@ -15,7 +15,7 @@
 
 
 @implementation GetMajorList{}
-@synthesize selectCourse;
+@synthesize selectMajor;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -155,7 +155,7 @@
     //Retrieve class list for current selected course
     UITableViewCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
     //store in a string
-    selectCourse =selectedCell.textLabel.text;
+    selectMajor =selectedCell.textLabel.text;
     //print out what we have in the string
     //NSLog (@"string print out : %@", selectCourse);
    //stringwithFormat
@@ -168,7 +168,7 @@
     if ([[segue identifier] isEqualToString:@"FromMajorToCourses"])
     {
         ClassViewController * destVC = [segue destinationViewController];
-        [destVC populateCourse:selectCourse];
+        [destVC populateCourse:selectMajor];
     }
 }
 @end

@@ -175,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `userprofile` (
   `uid` int(11) NOT NULL,
   `lastname` varchar(45) DEFAULT NULL,
   `firstname` varchar(45) DEFAULT NULL,
+  `usertype` varchar(45) DEFAULT NULL,
   `major` varchar(45) DEFAULT NULL,
   `school` varchar(45) DEFAULT NULL,
   `degree` varchar(45) DEFAULT NULL,

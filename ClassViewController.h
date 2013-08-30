@@ -16,13 +16,13 @@
 @end
 @interface ClassViewController : UITableViewController
 {
-      NSMutableArray *tmpArr;
-    NSMutableDictionary * jsonObject;
+          NSMutableDictionary * jsonObject;
     
 }
+@property (strong, nonatomic) NSString *selectCourse;
 @property (nonatomic,retain) NSMutableData *receivedData;
-@property (nonatomic, retain) NSString* course;
+@property (nonatomic, retain) NSString* major;
 @property (nonatomic, retain) NSArray * courseList;
 - (NSArray *) parseJSON: (NSData *) data ;
-- (void) populateCourse : (NSString *) aCourse;
+- (void) populateCourse : (NSString *) aMajor;
 @end

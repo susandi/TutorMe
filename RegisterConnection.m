@@ -29,7 +29,7 @@
  * @param username is the username to login
  * @param password is the password to login
  */
-- (void)createConnection: (NSString *) firstname : (NSString *) lastname : (NSString *) username : (NSString *) password
+- (void)createConnection: (NSString *) username : (NSString *) password
 {
     //MAMP
     //NSString* link = @"http://localhost/include_php/registerData.php";
@@ -40,8 +40,8 @@
                                      cachePolicy:NSURLRequestUseProtocolCachePolicy
                                      timeoutInterval:60.0];
     
-    NSString *myParameters = [NSString stringWithFormat: @"first_name=%@ & last_name=%@ & username=%@ & password=%@",
-                              firstname, lastname, username, password];
+    NSString *myParameters = [NSString stringWithFormat: @"emailsignup=%@ & passwordsignup=%@",
+                              username, password];
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setHTTPBody:[myParameters dataUsingEncoding:NSUTF8StringEncoding]];
     

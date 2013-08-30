@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C093C1A17AAF46E00FCD540 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C093C1917AAF46E00FCD540 /* RegisterViewController.m */; };
 		0C3EB21D170F66B0003E0F3D /* CustomTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3EB21C170F66B0003E0F3D /* CustomTable.m */; };
 		0C4AE4B9176B8B3300AD2939 /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4AE4B8176B8B3300AD2939 /* ClassViewController.m */; };
 		0C70B41E17215732003D2D64 /* GetMajorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70B41D17215732003D2D64 /* GetMajorList.m */; };
+		0C8EC8E617C3471C0070B8AF /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8EC8E517C3471C0070B8AF /* CustomCell.m */; };
+		0C946A4117BF56B200715BF6 /* TutorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C946A4017BF56B200715BF6 /* TutorListViewController.m */; };
+		0CB0E0B517B4C9E600D4E86D /* ShowTutorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB0E0B417B4C9E600D4E86D /* ShowTutorViewController.m */; };
 		0CC0B27C170F5E88008FF60E /* LoginConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC0B27B170F5E88008FF60E /* LoginConnection.m */; };
 		0CC0B27F170F5EA4008FF60E /* RegisterConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC0B27E170F5EA4008FF60E /* RegisterConnection.m */; };
 		1F35731B1723BA890002DF08 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F35731A1723BA890002DF08 /* ProfileViewController.m */; };
@@ -25,17 +29,24 @@
 		4B8B3D5816E2EE1000DDBB6A /* TutorMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B3D5716E2EE1000DDBB6A /* TutorMeViewController.m */; };
 		4B8B3D5F16E2F26300DDBB6A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8B3D5E16E2F26300DDBB6A /* MainStoryboard.storyboard */; };
 		D02A800216FFABF900A78298 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A800116FFABF900A78298 /* LoginViewController.m */; };
-		D02A800517001E1000A78298 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02A800417001E1000A78298 /* RegisterViewController.m */; };
 		D089A3F816FCB81E0086170B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D089A3F716FCB81E0086170B /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C093C1817AAF46E00FCD540 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		0C093C1917AAF46E00FCD540 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		0C3EB21B170F66B0003E0F3D /* CustomTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTable.h; sourceTree = "<group>"; };
 		0C3EB21C170F66B0003E0F3D /* CustomTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTable.m; sourceTree = "<group>"; };
 		0C4AE4B7176B8B3300AD2939 /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
 		0C4AE4B8176B8B3300AD2939 /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
 		0C70B41C17215732003D2D64 /* GetMajorList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMajorList.h; sourceTree = "<group>"; };
 		0C70B41D17215732003D2D64 /* GetMajorList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMajorList.m; sourceTree = "<group>"; };
+		0C8EC8E417C3471C0070B8AF /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		0C8EC8E517C3471C0070B8AF /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		0C946A3F17BF56B200715BF6 /* TutorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorListViewController.h; sourceTree = "<group>"; };
+		0C946A4017BF56B200715BF6 /* TutorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorListViewController.m; sourceTree = "<group>"; };
+		0CB0E0B317B4C9E600D4E86D /* ShowTutorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTutorViewController.h; sourceTree = "<group>"; };
+		0CB0E0B417B4C9E600D4E86D /* ShowTutorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTutorViewController.m; sourceTree = "<group>"; };
 		0CC0B27A170F5E88008FF60E /* LoginConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginConnection.h; sourceTree = SOURCE_ROOT; };
 		0CC0B27B170F5E88008FF60E /* LoginConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginConnection.m; sourceTree = SOURCE_ROOT; };
 		0CC0B27D170F5EA4008FF60E /* RegisterConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterConnection.h; sourceTree = SOURCE_ROOT; };
@@ -60,8 +71,6 @@
 		4B8B3D5E16E2F26300DDBB6A /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D02A800016FFABF900A78298 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = SOURCE_ROOT; };
 		D02A800116FFABF900A78298 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = SOURCE_ROOT; };
-		D02A800317001E1000A78298 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = SOURCE_ROOT; };
-		D02A800417001E1000A78298 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		D089A3F616FCB81E0086170B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D089A3F716FCB81E0086170B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +96,12 @@
 				0C70B41D17215732003D2D64 /* GetMajorList.m */,
 				0C4AE4B7176B8B3300AD2939 /* ClassViewController.h */,
 				0C4AE4B8176B8B3300AD2939 /* ClassViewController.m */,
+				0CB0E0B317B4C9E600D4E86D /* ShowTutorViewController.h */,
+				0CB0E0B417B4C9E600D4E86D /* ShowTutorViewController.m */,
+				0C946A3F17BF56B200715BF6 /* TutorListViewController.h */,
+				0C946A4017BF56B200715BF6 /* TutorListViewController.m */,
+				0C8EC8E417C3471C0070B8AF /* CustomCell.h */,
+				0C8EC8E517C3471C0070B8AF /* CustomCell.m */,
 			);
 			name = GetMajorList;
 			path = ..;
@@ -107,10 +122,10 @@
 			children = (
 				D02A800016FFABF900A78298 /* LoginViewController.h */,
 				D02A800116FFABF900A78298 /* LoginViewController.m */,
-				D02A800317001E1000A78298 /* RegisterViewController.h */,
-				D02A800417001E1000A78298 /* RegisterViewController.m */,
 				1F3573191723BA890002DF08 /* ProfileViewController.h */,
 				1F35731A1723BA890002DF08 /* ProfileViewController.m */,
+				0C093C1817AAF46E00FCD540 /* RegisterViewController.h */,
+				0C093C1917AAF46E00FCD540 /* RegisterViewController.m */,
 			);
 			name = ViewController;
 			path = TutorMeViewController;
@@ -269,13 +284,16 @@
 				4B8B3D5816E2EE1000DDBB6A /* TutorMeViewController.m in Sources */,
 				D089A3F816FCB81E0086170B /* AppDelegate.m in Sources */,
 				D02A800216FFABF900A78298 /* LoginViewController.m in Sources */,
-				D02A800517001E1000A78298 /* RegisterViewController.m in Sources */,
 				0CC0B27C170F5E88008FF60E /* LoginConnection.m in Sources */,
 				0CC0B27F170F5EA4008FF60E /* RegisterConnection.m in Sources */,
 				0C3EB21D170F66B0003E0F3D /* CustomTable.m in Sources */,
 				0C70B41E17215732003D2D64 /* GetMajorList.m in Sources */,
 				1F35731B1723BA890002DF08 /* ProfileViewController.m in Sources */,
 				0C4AE4B9176B8B3300AD2939 /* ClassViewController.m in Sources */,
+				0C093C1A17AAF46E00FCD540 /* RegisterViewController.m in Sources */,
+				0CB0E0B517B4C9E600D4E86D /* ShowTutorViewController.m in Sources */,
+				0C946A4117BF56B200715BF6 /* TutorListViewController.m in Sources */,
+				0C8EC8E617C3471C0070B8AF /* CustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
