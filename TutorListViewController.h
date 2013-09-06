@@ -10,11 +10,14 @@
 #import "CustomCell.h"
 @interface TutorListViewController : UITableViewController
 {
-    NSMutableArray *tmpArr;
+    
     NSMutableDictionary * jsonObject;
+    NSMutableArray *filteredStrings;
     IBOutlet UITableView *mainTableView;
+    BOOL isfiltered;
 }
 
+@property (weak, nonatomic) IBOutlet UISearchBar *TutorSearchBar;
 @property (strong, nonatomic) NSString *selectCourse;
 
 @property (strong,retain) NSMutableData *receivedData;

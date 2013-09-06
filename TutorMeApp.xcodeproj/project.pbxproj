@@ -13,7 +13,6 @@
 		0C70B41E17215732003D2D64 /* GetMajorList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70B41D17215732003D2D64 /* GetMajorList.m */; };
 		0C8EC8E617C3471C0070B8AF /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8EC8E517C3471C0070B8AF /* CustomCell.m */; };
 		0C946A4117BF56B200715BF6 /* TutorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C946A4017BF56B200715BF6 /* TutorListViewController.m */; };
-		0CB0E0B517B4C9E600D4E86D /* ShowTutorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB0E0B417B4C9E600D4E86D /* ShowTutorViewController.m */; };
 		0CC0B27C170F5E88008FF60E /* LoginConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC0B27B170F5E88008FF60E /* LoginConnection.m */; };
 		0CC0B27F170F5EA4008FF60E /* RegisterConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CC0B27E170F5EA4008FF60E /* RegisterConnection.m */; };
 		1F35731B1723BA890002DF08 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F35731A1723BA890002DF08 /* ProfileViewController.m */; };
@@ -45,8 +44,6 @@
 		0C8EC8E517C3471C0070B8AF /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		0C946A3F17BF56B200715BF6 /* TutorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorListViewController.h; sourceTree = "<group>"; };
 		0C946A4017BF56B200715BF6 /* TutorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorListViewController.m; sourceTree = "<group>"; };
-		0CB0E0B317B4C9E600D4E86D /* ShowTutorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTutorViewController.h; sourceTree = "<group>"; };
-		0CB0E0B417B4C9E600D4E86D /* ShowTutorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTutorViewController.m; sourceTree = "<group>"; };
 		0CC0B27A170F5E88008FF60E /* LoginConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginConnection.h; sourceTree = SOURCE_ROOT; };
 		0CC0B27B170F5E88008FF60E /* LoginConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginConnection.m; sourceTree = SOURCE_ROOT; };
 		0CC0B27D170F5EA4008FF60E /* RegisterConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterConnection.h; sourceTree = SOURCE_ROOT; };
@@ -96,8 +93,6 @@
 				0C70B41D17215732003D2D64 /* GetMajorList.m */,
 				0C4AE4B7176B8B3300AD2939 /* ClassViewController.h */,
 				0C4AE4B8176B8B3300AD2939 /* ClassViewController.m */,
-				0CB0E0B317B4C9E600D4E86D /* ShowTutorViewController.h */,
-				0CB0E0B417B4C9E600D4E86D /* ShowTutorViewController.m */,
 				0C946A3F17BF56B200715BF6 /* TutorListViewController.h */,
 				0C946A4017BF56B200715BF6 /* TutorListViewController.m */,
 				0C8EC8E417C3471C0070B8AF /* CustomCell.h */,
@@ -291,7 +286,6 @@
 				1F35731B1723BA890002DF08 /* ProfileViewController.m in Sources */,
 				0C4AE4B9176B8B3300AD2939 /* ClassViewController.m in Sources */,
 				0C093C1A17AAF46E00FCD540 /* RegisterViewController.m in Sources */,
-				0CB0E0B517B4C9E600D4E86D /* ShowTutorViewController.m in Sources */,
 				0C946A4117BF56B200715BF6 /* TutorListViewController.m in Sources */,
 				0C8EC8E617C3471C0070B8AF /* CustomCell.m in Sources */,
 			);

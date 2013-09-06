@@ -32,6 +32,10 @@
 	// Do any additional setup after loading the view.
     tutorList =[[NSArray alloc] init];
     [self createConnection:course];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name: UIKeyboardDidShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name: UIKeyboardWillHideNotification object:nil];
+//    
+
     
 }
 
@@ -40,7 +44,51 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//-(void)keyboardHidden:(NSNotification *)note
+//{
+//    [self.tableView setFrame:self.view.bounds];
+//}
+//-(void)keyboardShown:(NSNotification *)note
+//{
+//    CGRect keyboardFrame;
+//    [[[note userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];
+//    CGRect tableViewFrame =self.tableView.frame;
+//    tableViewFrame.size.height-=keyboardFrame.size.height;
+//    [self.tableView  setFrame:tableViewFrame];
+//}
+-(void) searchBar :(UISearchBar *) searchBar textDidChange:(NSString *)searchText
+{
+    if(searchText.length==0)
+    {
+        isfiltered=NO;
+        [filteredStrings removeAllObjects];
+        [filteredStrings addObjectsFromArray:tutorList];
+    }
+    else
+    {
+        [filteredStrings removeAllObjects];
+        isfiltered=YES;
+    }
+    filteredStrings=[[NSMutableArray alloc] init];
+    for(NSString *str in tutorList)
+    {
+        NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if(stringRange.location !=NSNotFound)
+            [filteredStrings addObject:str];
+    }
+[self.tableView reloadData];
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self.tableView resignFirstResponder];
+    [searchBar resignFirstResponder];
+    searchBar.text=@"";
+}
+-(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self.tableView resignFirstResponder];
+    [searchBar resignFirstResponder];
+}
 -(void) createConnection : (NSString *) courseName
 {
     NSString *url=[ NSString stringWithFormat:@"%@", @"http://localhost/Test%20Server/wwwroot/include_php/tutorData.php"];
@@ -83,16 +131,6 @@
     connection = nil;
     self.receivedData = nil;
     
-    /*
-     if([result caseInsensitiveCompare:@"passed"] == NSOrderedSame)
-     {
-     
-     NSDictionary *dic = [jsonObject objectForKey:@"course_name"];
-     [classNames addObject:dic];
-     
-     NSLog(@"classNames print out : %@",classNames);
-     }
-     */
     
     [self.tableView reloadData];
     
@@ -149,11 +187,11 @@
      
      NEED TO DO ERROR CHECKING IN json object ("error" :    , "result" );
      */
-    
     NSArray *FeesArray = [json objectForKey:@"resultUserFees"];
     
     NSLog (@"Fees data=%@", json);
     return  FeesArray;
+    
 }
 
 - (void) populateTutors:(NSString *)aCourse
@@ -171,38 +209,54 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+     if(isfiltered){ return [filteredStrings count];}
     return [tutorList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   /* static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    NSString * tutorName = [NSString stringWithFormat:@"%@", [self.tutorList objectAtIndex:indexPath.row]];
-    cell.textLabel.text= tutorName;
-    
-    return cell;*/
     
     CustomCell *cell=(CustomCell *) [tableView dequeueReusableCellWithIdentifier:@"MainCell"];
     if(cell==nil)
+    {
         cell=[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
-    NSString *tutorName=[NSString stringWithFormat:@"%@", [self.tutorList objectAtIndex:indexPath.row]];
     
-      NSString *fees=[NSString stringWithFormat:@"%@", [self.feesList objectAtIndex:indexPath.row]];
-/*disable the UItableView selection highlighting
-  we can also use cell.userInteractionEnabled = NO;
- */
-cell.selectionStyle=UITableViewCellSelectionStyleNone;
-cell.textLabel.enabled=NO;
+    }
+    if(!isfiltered)
+    {
+        cell=[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
+        NSString *tutorName=[NSString stringWithFormat:@"%@", [self.tutorList objectAtIndex:indexPath.row]];
     
-cell.UsernameLabel.text= tutorName;
-cell.FeesLabel.text=fees;
-cell.viewController=self;
-[cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
-return (UITableViewCell *) cell;
+        NSString *fees=[NSString stringWithFormat:@"%@", [self.feesList objectAtIndex:indexPath.row]];
+    /*disable the UItableView selection highlighting
+     we can also use cell.userInteractionEnabled = NO;
+     */
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+        cell.textLabel.enabled=NO;
+    
+        cell.UsernameLabel.text= tutorName;
+        cell.FeesLabel.text=fees;
+        cell.viewController=self;
+        [cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
+
+        }
+        else
+        {
+            cell=[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
+            
+            
+            NSString *fees=[NSString stringWithFormat:@"%@", [self.feesList objectAtIndex:indexPath.row]];
+          
+            cell.selectionStyle=UITableViewCellSelectionStyleNone;
+            cell.textLabel.enabled=NO;
+            
+            cell.UsernameLabel.text= [filteredStrings objectAtIndex:indexPath.row];;
+            cell.FeesLabel.text=fees;
+            cell.viewController=self;
+            [cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
+        }
+    
+        return (UITableViewCell *) cell;
 
 }
 -(void) ViewTutorButtonRow:(UIButton *)sender

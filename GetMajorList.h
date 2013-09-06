@@ -14,7 +14,7 @@
 
 @interface GetMajorList : UITableViewController <UISearchBarDelegate>
 {
-    NSMutableArray *ListOfMajors;
+    NSMutableArray *majorList;
     NSMutableArray *filteredStrings;
     BOOL isFiltered;
     

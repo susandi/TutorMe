@@ -14,15 +14,18 @@
 
 @interface ServiceConnector : NSObject <NSURLConnectionDelegate,NSURLConnectionDataDelegate>
 @end
-@interface ClassViewController : UITableViewController
+@interface ClassViewController : UITableViewController<UISearchBarDelegate>
 {
-          NSMutableDictionary * jsonObject;
+    NSMutableDictionary * jsonObject;
+    NSMutableArray *filteredStrings;
+    BOOL isfiltered;
     
 }
 @property (strong, nonatomic) NSString *selectCourse;
 @property (nonatomic,retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSString* major;
-@property (nonatomic, retain) NSArray * courseList;
-- (NSArray *) parseJSON: (NSData *) data ;
+@property (nonatomic, retain) NSMutableArray * courseList;
+@property (weak, nonatomic) IBOutlet UISearchBar *ClassSearchBar;
+- (NSMutableArray *) parseJSON: (NSData *) data ;
 - (void) populateCourse : (NSString *) aMajor;
 @end

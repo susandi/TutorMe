@@ -8,8 +8,9 @@
 
 #import "ClassViewController.h"
 #import "GetMajorList.h"
-#import "ShowTutorViewController.h"
+#import "TutorListViewController.h"
 #import "TutorMeAppDelegate.h"
+
 
 @interface ClassViewController ()
 
@@ -26,25 +27,83 @@
      
     }
     return self;
+   
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    courseList = [[NSArray alloc] init];
+    courseList = [[NSMutableArray alloc] init];
     [self createConnection:major];
- 
-   
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name: UIKeyboardDidShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name: UIKeyboardWillHideNotification object:nil];
+//   
    
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-   
+    [super didReceiveMemoryWarning];   
     
 }
-
+//-(void)keyboardHidden:(NSNotification *)note
+//{
+//    [self.tableView setFrame:self.view.bounds];
+//}
+//-(void)keyboardShown:(NSNotification *)note
+//{
+//    CGRect keyboardFrame;
+//    [[[note userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardFrame];
+//    CGRect tableViewFrame =self.tableView.frame;
+//    tableViewFrame.size.height-=keyboardFrame.size.height;
+//    [self.tableView  setFrame:tableViewFrame];
+//}
+-(void) searchBar :(UISearchBar *) searchBar textDidChange:(NSString *)searchText
+{
+    if(searchText.length==0)
+    {
+        isfiltered=NO;
+        [filteredStrings removeAllObjects];
+        [filteredStrings addObjectsFromArray:courseList];
+    }
+    else
+    {
+        [filteredStrings removeAllObjects];
+        isfiltered=YES;
+    }
+    filteredStrings=[[NSMutableArray alloc] init];
+    for(NSString *str in courseList)
+    {
+        NSRange stringRange=[str rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        if(stringRange.location !=NSNotFound)
+        [filteredStrings addObject:str];
+    }
+   // NSLog(@"filterStrings is %@",filteredStrings);
+    
+   /* for(NSDictionary *item in courseList)
+    {
+        NSString *string =[item objectForKey:@"result"];
+        NSRange stringRange=[string rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        
+        
+        if(stringRange.location !=NSNotFound)
+            
+            [filteredStrings addObject:item];
+    }*/
+    [self.tableView reloadData];
+    
+}
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+  [self.tableView resignFirstResponder];
+    [searchBar resignFirstResponder];
+    searchBar.text=@"";
+}
+-(void) searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self.tableView resignFirstResponder];
+    [searchBar resignFirstResponder];
+}
 
 - (void)createConnection : (NSString *) departmentName
 {
@@ -124,7 +183,7 @@
 #pragma mark - Table view data source
 
 
-- (NSArray *) parseJSON: (NSData *) data ;
+- (NSMutableArray *) parseJSON: (NSData *) data ;
 {
     NSError *error = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions
@@ -132,44 +191,14 @@
 
     if (json == nil)
         return nil;
-    /******************************
-     *
-     
-     NEED TO DO ERROR CHECKING IN json object ("error" :    , "result" );
-     */
+   
 
-    NSArray *resultArray = [json objectForKey:@"result"];
+    NSMutableArray *resultArray = [json objectForKey:@"result"];
+   
     
-    /*
-      NSString *result = nil;
-    //error parsing
-    if(!json)
-    {
-        NSLog(@"%@", error);
-        result = @"failed";
-    }
-    else
-    {
-        NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
-        result =  (NSString*)[json objectForKey:@"passed"];
-        
-        
-        jsonObject=[json objectForKey:@"course"];//table name
-        NSDictionary *dic = [jsonObject objectForKey:@"course_name"];
-        [classNames addObject:dic];
-        
-        NSLog(@"classNames print out : %@",classNames);
-        
-    }
+       NSLog (@"course data=%@", json);
+        return  resultArray;
     
-    json = nil;
-    error = nil;
-    return result;
-     */
-    
-    NSLog (@"course data=%@", json);
-    return  resultArray;
-     
 }
 
 - (void) populateCourse : (NSString *) aMajor
@@ -186,6 +215,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    if(isfiltered){ return [filteredStrings count];}
     return [courseList count];
 }
 
@@ -196,8 +226,17 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSString * courseName = [courseList objectAtIndex:indexPath.row];
-    cell.textLabel.text= courseName;
+    if(!isfiltered)
+    {
+        
+        cell.textLabel.text = [courseList objectAtIndex:indexPath.row];
+        
+      
+    }
+    else
+    {
+        cell.textLabel.text=[filteredStrings objectAtIndex:indexPath.row];
+    }
     
     return cell;
 }
@@ -218,13 +257,14 @@ NSLog (@"string print out : %@", selectCourse);
 //stringwithFormat
 //
 [self performSegueWithIdentifier:@"FromCourseToTutors" sender:self];
+    
 
 }
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"FromCourseToTutors"])
     {
-        ShowTutorViewController * destVC = [segue destinationViewController];
+        TutorListViewController * destVC = [segue destinationViewController];
         [destVC populateTutors:selectCourse];
     }
 }

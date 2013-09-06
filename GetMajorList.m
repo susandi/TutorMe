@@ -36,7 +36,7 @@
     [self start];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown:) name: UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden:) name: UIKeyboardWillHideNotification object:nil];
-
+    
 }
 -(void)keyboardHidden:(NSNotification *)note
 {
@@ -56,23 +56,23 @@
     {
         isFiltered = NO;
         [filteredStrings removeAllObjects];
-        [filteredStrings addObjectsFromArray:ListOfMajors];
+        [filteredStrings addObjectsFromArray:majorList];
     }
     else
     {   [filteredStrings removeAllObjects];
         isFiltered=YES;
     }
     filteredStrings=[[NSMutableArray alloc]init];
-    for(NSDictionary *item in ListOfMajors)
+    for(NSDictionary *item in majorList)
     {
         NSString *string =[item objectForKey:@"department"];
         NSRange stringRange=[string rangeOfString:searchText options:NSCaseInsensitiveSearch];
         
         
         if(stringRange.location !=NSNotFound)
-
+            
             [filteredStrings addObject:item];
-        }
+    }
     
     
     //[self.tableView reloadData];
@@ -91,7 +91,7 @@
 -(void) getData:(NSData *)data
 {   NSError *error;
     
-    ListOfMajors = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    majorList = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     //[self.tableView reloadData];
 }
 
@@ -119,7 +119,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(isFiltered) {return [filteredStrings count];}
-    return [ListOfMajors count];
+    return [majorList count];
     
     
 }
@@ -134,15 +134,15 @@
     
     if(!isFiltered)
     {
-    
-    NSDictionary *info = [ListOfMajors objectAtIndex:indexPath.row];
-    cell.textLabel.text=[info objectForKey:@"department"]; // @"X": X is the attribute name in table to show in tableview
+        
+        NSDictionary *info = [majorList objectAtIndex:indexPath.row];
+        cell.textLabel.text=[info objectForKey:@"department"]; // @"X": X is the attribute name in table to show in tableview
     }
     else
     {   cell.textLabel.text = [[filteredStrings objectAtIndex:indexPath.row] objectForKey:@"department"];
     }
     return cell;
-        
+    
 }
 
 
@@ -150,7 +150,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  
+    
     
     //Retrieve class list for current selected course
     UITableViewCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
@@ -158,7 +158,7 @@
     selectMajor =selectedCell.textLabel.text;
     //print out what we have in the string
     //NSLog (@"string print out : %@", selectCourse);
-   //stringwithFormat
+    //stringwithFormat
     //
     [self performSegueWithIdentifier:@"FromMajorToCourses" sender:self];
     
