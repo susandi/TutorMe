@@ -16,7 +16,7 @@
 @implementation TutorListViewController
 
 
-@synthesize receivedData, course, tutorList,feesList;
+@synthesize receivedData, course, tutorList,feesList,selectTutorName;
 
 
 - (id) initWithStyle:(UITableViewStyle)style
@@ -230,14 +230,15 @@
         NSString *fees=[NSString stringWithFormat:@"%@", [self.feesList objectAtIndex:indexPath.row]];
     /*disable the UItableView selection highlighting
      we can also use cell.userInteractionEnabled = NO;
-     */
+     
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         cell.textLabel.enabled=NO;
-    
+    */
+        
         cell.UsernameLabel.text= tutorName;
         cell.FeesLabel.text=fees;
         cell.viewController=self;
-        [cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
+        //[cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
 
         }
         else
@@ -253,36 +254,31 @@
             cell.UsernameLabel.text= [filteredStrings objectAtIndex:indexPath.row];;
             cell.FeesLabel.text=fees;
             cell.viewController=self;
-            [cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
+            //[cell.customButton setTitle:@"view this tutor" forState: UIControlStateNormal];
         }
     
         return (UITableViewCell *) cell;
 
 }
--(void) ViewTutorButtonRow:(UIButton *)sender
-{
-    UITableViewCell *parentCell=[[sender superview] superview];
-    NSIndexPath *indexPathOfCell =[mainTableView indexPathForCell:parentCell];
-    NSLog(@"index path of button's cell: %d",indexPathOfCell.row);
-}
+
 #pragma mark - Table view delegate
 
-/*
-- (void)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath:(NSIndexPath *)indexPath
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
      //Retrieve tutor list for current selected course
-     UITableViewCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
+     CustomCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
      //store in a string
-     selectCourse =selectedCell.textLabel.text;
+     selectTutorName =selectedCell.textLabel.text;
      //print out what we have in the string
-     NSLog (@"string print out : %@", selectCourse);
+     NSLog (@"string print out : %@", selectTutorName);
      //stringwithFormat
      //
-     [self performSegueWithIdentifier:@"FromCourseToTutors" sender:self];
+    // [self performSegueWithIdentifier:@"FromCourseToTutors" sender:self];
  
   
-}*/
+}
 
 
 @end

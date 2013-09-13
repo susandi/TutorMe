@@ -12,12 +12,12 @@
 @interface CustomCell : UITableViewCell
 {
     UILabel *customLabel;
-    UIButton *customButton;
+    //UIButton *customButton;
 
 }
 @property (nonatomic,retain) UILabel *UsernameLabel;
 @property (nonatomic,retain) UILabel *FeesLabel;
-@property (nonatomic, retain) UIButton *customButton;
+//@property (nonatomic, retain) UIButton *customButton;
 @property   (nonatomic) TutorListViewController *viewController;
 
 

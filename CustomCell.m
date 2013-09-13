@@ -10,7 +10,7 @@
 #import "TutorListViewController.h"
 
 @implementation CustomCell
-@synthesize customButton,UsernameLabel,FeesLabel,viewController;
+@synthesize UsernameLabel,FeesLabel,viewController;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,25 +26,26 @@
         UsernameLabel.adjustsFontSizeToFitWidth=YES;
         [self.contentView addSubview:UsernameLabel];
         
-        FeesLabel=[[UILabel alloc] initWithFrame:CGRectMake(10 ,21, 165,25 )];
-        FeesLabel.font= [UIFont systemFontOfSize:12.0];
+        FeesLabel=[[UILabel alloc] initWithFrame:CGRectMake(220 ,8, 165,25 )];
+        FeesLabel.font= [UIFont systemFontOfSize:18.0];
         FeesLabel.textColor=[UIColor blueColor];
         FeesLabel.backgroundColor=[UIColor clearColor];
         FeesLabel.highlightedTextColor=[UIColor whiteColor];
         FeesLabel.adjustsFontSizeToFitWidth=YES;
         [self.contentView addSubview:FeesLabel];
         
-        customButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
-        customButton.frame=CGRectMake(200,8, 110,30 );
-        [customButton addTarget:self action:@selector(ViewTutorButtonRow:) forControlEvents:UIControlEventTouchUpInside];
-        [self.contentView addSubview:customButton];    }
+//        customButton=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+//        customButton.frame=CGRectMake(200,8, 110,30 );
+//        [customButton addTarget:self action:@selector(ViewTutorButtonRow:) forControlEvents:UIControlEventTouchUpInside];
+//        [self.contentView addSubview:customButton];
+    }
     return self;
 }
--(void) ViewTutorButtonRow:(UIButton *) sender
-{
-
-    [viewController ViewTutorButtonRow: sender];
-}
+//-(void) ViewTutorButtonRow:(UIButton *) sender
+//{
+//
+//    [viewController ViewTutorButtonRow: sender];
+//}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

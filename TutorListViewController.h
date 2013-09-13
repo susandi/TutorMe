@@ -18,7 +18,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UISearchBar *TutorSearchBar;
-@property (strong, nonatomic) NSString *selectCourse;
+@property (strong, nonatomic) NSString *selectTutorName;
 
 @property (strong,retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSString* course;
