@@ -96,11 +96,17 @@ class Authentication
 		}
 		$statement->fetch();		
 		
-		if($resultPassword == hash("sha512", $this->password.$resultSalt))
+		
+		// problem need to fix this statement
+		if($resultPassword == hash("sha512", $this->password.$resultSalt)){
 			return true;
+		}	
 		else {
-			echo ($resultEmail).'<br \>'.($resultPassword).'<br \>'.($resultSalt).'<br \>';
-			echo ($this->password);
+			//echo "email in DB: ".($resultEmail)."\r\n";
+			//echo "salted pass in DB: ".($resultPassword)."\r\n"; 
+			//echo "salt in DB: ".($resultSalt)."\r\n";
+			//echo "Typed pass: ".($this->password)."\r\n";
+			//echo "Typed pass salted: " .(hash("sha512", $this->password.$resultSalt))."\r\n";
 			return false;
 		}
 		

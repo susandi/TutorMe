@@ -13,9 +13,9 @@ require_once('../../php/login.php');
 
 
 //for testing
-echo "This is login.php in include_php";
-echo ('<br \>'.$emailInputFromUser);
-echo ('<br \>'.$passwordInputFromUser);
+//echo "This is login.php in include_php";
+//echo ('<br \>'.$emailInputFromUser);
+//echo ('<br \>'.$passwordInputFromUser);
 
 
 ?>
