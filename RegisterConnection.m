@@ -141,7 +141,7 @@
     // receivedData is declared as a method instance elsewhere
     NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
     NSString * result = [self parseJSON:receivedData];
-    
+    NSLog (@"%@", receivedData);
     // release the connection, and the data object
     connection = nil;
     receivedData = nil;
